@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Administraion\AcademicYearController;
+use App\Http\Controllers\Administraion\MajorController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +29,14 @@ Route::get('/administration/classes/create', function () {
 Route::get('/administration/classes/{id}/edit', function () {
     return view('administration.classes.edit');
 });
+
+Route::get('/administration/major', [MajorController::class, 'index'])->name('major');
+Route::get('/administration/major/create', [MajorController::class, 'create'])->name('major.create');
+Route::get('/administration/major/{id}/edit', [MajorController::class, 'edit'])->name('major.edit');
+
+Route::get('/administration/school_year', [AcademicYearController::class, 'index'])->name('school_year');
+Route::get('/administration/school_year/create', [AcademicYearController::class, 'create'])->name('school_year.create');
+Route::get('/administration/school_year/{id}/edit', [AcademicYearController::class, 'edit'])->name('school_year.edit');
+
+
 require __DIR__.'/auth.php';
