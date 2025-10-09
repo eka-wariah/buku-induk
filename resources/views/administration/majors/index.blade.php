@@ -15,15 +15,15 @@
             <div class="card-body px-4 py-3">
               <div class="row align-items-center">
                 <div class="col-9">
-                  <h4 class="fw-semibold mb-8">TAHUN AJARAN</h4>
+                  <h4 class="fw-semibold mb-8">JURUSAN</h4>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                    <li class="breadcrumb-item" aria-current="page">Daftar Tahun Ajaran</li>
+                    <li class="breadcrumb-item" aria-current="page">Daftar Jurusan</li>
                       <li class="breadcrumb-item">
-                        <a class="text-muted text-decoration-none" href="/administration/school_year/create">Tambah Tahun Ajaran</a>
+                        <a class="text-muted text-decoration-none" href="/administration/major/create">Tambah Jurusan</a>
                       </li>
                       <li class="breadcrumb-item">
-                        <a class="text-muted text-decoration-none" href="/administration/school_year/{id}/edit">Edit Tahun Ajaran</a>
+                        <a class="text-muted text-decoration-none" href="/administration/major/{id}/edit">Edit Jurusan</a>
                       </li>
                     </ol>
                    
@@ -41,8 +41,8 @@
         <div class="card">
             <div class="card-body">
                 <div class="mb-5 position-relative">
-                    <h4 class="card-title mb-0">Daftar Kategori</h4>
-                    <a href="/admin/trash_category/create" class="btn btn-primary position-absolute top-0 end-0">Tambah Kategori</a>
+                    <h4 class="card-title mb-0">Daftar Jurusan</h4>
+                    <a href="/administration/major/create" class="btn btn-primary position-absolute top-0 end-0">Tambah Kategori</a>
                 </div>
                 <p class="card-subtitle mb-3">
                     
