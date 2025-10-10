@@ -38,5 +38,13 @@ Route::get('/administration/school_year', [AcademicYearController::class, 'index
 Route::get('/administration/school_year/create', [AcademicYearController::class, 'create'])->name('school_year.create');
 Route::get('/administration/school_year/{id}/edit', [AcademicYearController::class, 'edit'])->name('school_year.edit');
 
+Route::get('/administration/applications', function () {
+    return view('administration.application.index');
+});
+Route::get('/administration/applications/Application-requirements', function () {
+    return view('administration.application.create');
+});
+
+
 
 require __DIR__.'/auth.php';
