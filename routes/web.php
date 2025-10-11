@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Administraion\AcademicYearController;
+use App\Http\Controllers\Administraion\MajorController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +31,7 @@ Route::get('/administration/classes/{id}/edit', function () {
 });
 
 
+
 // Persyaratan Lamaran
 Route::get('/administration/application-requirements', function () {
     return view('administration.applicationRequirements.index');
@@ -47,4 +51,28 @@ Route::get('/administration/application-accepted', function () {
 Route::get('/administration/application-rejected', function () {
     return view('administration.application.rejected');
 });
+
+Route::get('/administration/major', [MajorController::class, 'index'])->name('major');
+Route::get('/administration/major/create', [MajorController::class, 'create'])->name('major.create');
+Route::get('/administration/major/{id}/edit', [MajorController::class, 'edit'])->name('major.edit');
+
+Route::get('/administration/school_year', [AcademicYearController::class, 'index'])->name('school_year');
+Route::get('/administration/school_year/create', [AcademicYearController::class, 'create'])->name('school_year.create');
+Route::get('/administration/school_year/{id}/edit', [AcademicYearController::class, 'edit'])->name('school_year.edit');
+
+Route::get('/administration/applications', function () {
+    return view('administration.application.index');
+});
+Route::get('/administration/applications/Application-requirements', function () {
+    return view('administration.application.create');
+});
+Route::get('/administration/applications/pending', function () {
+    return view('administration.application.pending');
+});
+
+Route::get('/student/student-admission', function () {
+    return view('student.admission.index');
+});
+
+
 require __DIR__.'/auth.php';
