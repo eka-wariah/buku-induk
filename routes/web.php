@@ -44,7 +44,12 @@ Route::get('/administration/applications', function () {
 Route::get('/administration/applications/Application-requirements', function () {
     return view('administration.application.create');
 });
+Route::get('/administration/applications/pending', function () {
+    return view('administration.application.pending');
+});
 
-
+Route::get('/student/student-admission', function () {
+    return view('student.admission.index');
+});
 
 require __DIR__.'/auth.php';
