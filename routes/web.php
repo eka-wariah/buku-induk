@@ -26,4 +26,25 @@ Route::get('/administration/classes/create', function () {
 Route::get('/administration/classes/{id}/edit', function () {
     return view('administration.classes.edit');
 });
+
+
+// Persyaratan Lamaran
+Route::get('/administration/application-requirements', function () {
+    return view('administration.applicationRequirements.index');
+});
+Route::get('/administration/application-requirements/create', function () {
+    return view('administration.applicationRequirements.create');
+});
+
+
+//lamaran
+Route::get('/administration/application', function () {
+    return view('administration.application.index');
+});
+Route::get('/administration/application-accepted', function () {
+    return view('administration.application.accepted');
+});
+Route::get('/administration/application-rejected', function () {
+    return view('administration.application.rejected');
+});
 require __DIR__.'/auth.php';
