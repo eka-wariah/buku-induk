@@ -130,5 +130,15 @@ Route::get('/student/task/{id}/detail', function () {
     return view('student.task.detail');
 });
 
+//Jadwal Pelajaran
+Route::get('/administration/subject-schedule', function () {
+    return view('administration.subject_schedule.index');
+});
+Route::get('/administration/subject-schedule/create', function () {
+    return view('administration.subject_schedule.create');
+});
+Route::get('/administration/subject-schedule/{id}/edit', function () {
+    return view('administration.subject_schedule.edit');
+});
 
 require __DIR__.'/auth.php';
