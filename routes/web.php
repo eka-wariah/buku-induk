@@ -48,6 +48,33 @@ Route::get('/administration/applications/pending', function () {
     return view('administration.application.pending');
 });
 
+Route::get('/administration/teacher', function () {
+    return view('administration.teacher.index');
+});
+
+Route::get('/administration/teacher2', function () {
+    return view('administration.teacher.index2');
+});
+Route::get('/administration/teacher/import', function () {
+    return view('administration.teacher.import');
+});
+Route::get('/administration/teacher/{id}/edit', function () {
+    return view('administration.teacher.edit');
+});
+Route::get('/administration/teacher/{id}/employment status/edit', function () {
+    return view('administration.teacher.edit_employe');
+});
+
+Route::get('/administration/teacher-administration', function () {
+    return view('administration.teacher_administration.index');
+});
+Route::get('/administration/teacher-administration/create', function () {
+    return view('administration.teacher_administration.create');
+});
+Route::get('/administration/teacher-administration/{id}/edit', function () {
+    return view('administration.teacher_administration.edit');
+});
+
 Route::get('/student/student-admission', function () {
     return view('student.admission.index');
 });

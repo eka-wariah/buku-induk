@@ -49,6 +49,18 @@
             </button>
           </li>
           <li class="nav-item" role="presentation">
+            <button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-3" id="pills-wife-tab" data-bs-toggle="pill" data-bs-target="#pills-wife" type="button" role="tab" aria-controls="pills-wife" aria-selected="false">
+              <i class="ti ti-bell me-2 fs-6"></i>
+              <span class="d-none d-md-block">Data Suami/Isteri</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-3" id="pills-employee-tab" data-bs-toggle="pill" data-bs-target="#pills-employee" type="button" role="tab" aria-controls="pills-wife" aria-selected="false">
+              <i class="ti ti-bell me-2 fs-6"></i>
+              <span class="d-none d-md-block">Status Kepegawaian</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
             <button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-3" id="pills-bills-tab" data-bs-toggle="pill" data-bs-target="#pills-teaching" type="button" role="tab" aria-controls="pills-bills" aria-selected="false">
               <i class="ti ti-article me-2 fs-6"></i>
               <span class="d-none d-md-block">Riwayat Mengajar</span>
@@ -269,6 +281,142 @@
                 </div>
               </div>
             </div>
+
+            <div class="tab-pane fade" id="pills-wife" role="tabpanel" aria-labelledby="pills-wife-tab" tabindex="0">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="card w-100 border position-relative overflow-hidden mb-0">
+                    <div class="card-body p-4">
+                      <h4 class="card-title">Data Suami/Isteri</h4>
+                      <p class="card-subtitle mb-4">Untuk mengubah detail pribadi Anda, edit dan simpan dari sini</p>
+                      <form>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Nama Suami/Isteri</label>
+                                <input type="text" class="form-control" id="exampleInputtext" placeholder="Tempat Lahir">
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Pekerjaan</label>
+                                <input type="text"
+                                name=""
+                                value=""
+                                class="form-control"
+                                inputmode="numeric"
+                                pattern="[0-9]*"
+                                maxlength="2"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16)"
+                                placeholder="Isi No. RW Anda"
+                                required />
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                            <div class="mb-3">
+                              <label for="exampleInputtext" class="form-label">NIK</label>
+                              <input type="text"
+                              name=""
+                              value=""
+                              class="form-control"
+                              inputmode="numeric"
+                              pattern="[0-9]*"
+                              maxlength="13"
+                              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16)"
+                              placeholder="NIK"
+                              required />
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputtext" class="form-label">NIP</label>
+                              <input type="text"
+                              name=""
+                              value=""
+                              class="form-control"
+                              inputmode="numeric"
+                              pattern="[0-9]*"
+                              maxlength="13"
+                              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16)"
+                              placeholder="NIP"
+                              required />
+                            </div>                    
+                          </div>
+                          
+                          <div class="col-12">
+                            <div class="d-flex align-items-center justify-content-end mt-4 gap-6">
+                              <button class="btn btn-primary">Save</button>
+                              <button class="btn bg-danger-subtle text-danger">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="pills-employee" role="tabpanel" aria-labelledby="pills-employee-tab" tabindex="0">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="card w-100 border position-relative overflow-hidden mb-0">
+                    <div class="card-body p-4">
+                      <h4 class="card-title">Status Kepegawaian</h4>
+                      <p class="card-subtitle mb-4">Untuk mengubah detail pribadi Anda, edit dan simpan dari sini</p>
+                      <form>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">TMT</label>
+                                <input type="date" class="form-control" id="exampleInputtext" placeholder="Tempat Lahir">
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">No. SK</label>
+                                <input type="text" name="" class="form-control" placeholder="Nama Sekolah Dasar" required>
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Durasi</label>
+                                <input type="text" name="" class="form-control" placeholder="Nama Sekolah Dasar" required>
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                            <div class="mb-3">
+                              <label for="exampleInputtext" class="form-label">Status</label>
+                              <select class="form-select" name="agama" aria-label="Pilih Agama" required>
+                                <option hidden value="">Pilih</option>
+                                <option value="Guru Tetap">Guru Tetap</option>
+                                <option value="Guru Tidak Tetap">Guru Tidak Tetap</option>
+                              </select>
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputtext" class="form-label">Jabatan</label>
+                              <input type="text" name="" class="form-control" placeholder="Nama Sekolah Dasar" required>
+                            </div> 
+                            <div class="mb-3">
+                              <label for="exampleInputtext" class="form-label">Inpassing</label>
+                              <select class="form-select" name="agama" aria-label="Pilih Agama" required>
+                                <option hidden value="">Pilih</option>
+                                <option value="Sudah">Sudah</option>
+                                <option value="Belum">Belum</option>
+                              </select>
+                            </div>                    
+                          </div>
+                          
+                          <div class="col-12">
+                            <div class="d-flex align-items-center justify-content-end mt-4 gap-6">
+                              <button class="btn btn-primary">Save</button>
+                              <button class="btn bg-danger-subtle text-danger">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="tab-pane fade" id="pills-teaching" role="tabpanel" aria-labelledby="pills-notifications-tab" tabindex="0">
               <div class="row justify-content-center">
                 <div class="col-12">
