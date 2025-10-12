@@ -6,7 +6,7 @@
 @endpush
 
 @section('title')
-    SiMaput | Kelas
+    SiMaput | Lamaran
 @endsection
 
 @section('content')
@@ -14,13 +14,13 @@
         <div class="card-body px-4 py-3">
             <div class="row align-items-center">
                 <div class="col-9">
-                    <h4 class="fw-semibold mb-8">KELAS</h4>
+                    <h4 class="fw-semibold mb-8">Lamaran</h4>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
                                 <a class="text-muted text-decoration-none" href="../main/index.html">Home</a>
                             </li>
-                            <li class="breadcrumb-item" aria-current="page">Daftar Kelas</li>
+                            <li class="breadcrumb-item" aria-current="page">Daftar Pelamar Ditolak</li>
 
                         </ol>
                     </nav>
@@ -37,9 +37,8 @@
         <div class="card">
             <div class="card-body">
                 <div class="mb-5 position-relative">
-                    <h4 class="card-title mb-0">Daftar Kelas
-                        <a href="/administration/classes/create"
-                            class="btn btn-primary btn-sm position-absolute top-0 end-0">Tambah Kelas</a>
+                    <h4 class="card-title mb-0">Daftar Pelamar Ditolak
+                       
 
                 </div>
 
@@ -50,10 +49,9 @@
                             <tr>
                                 <th width="10%">No</th>
 
-                                <th>Tingkatan</th>
-                                <th>Jurusan</th>
-                                <th>Nomor</th>
-                                <th>Aksi</th>
+                                <th>Nama</th>
+                                <th>Bidang</th>
+                                
 
 
 
@@ -65,10 +63,9 @@
                             <tr>
                                 <td width="10%">No</td>
 
-                                <td>XII</td>
-                                <td>PPLG</td>
-                                <td>1</td>
-                                <td><a href="/administration/classes/1/edit" class="btn btn-sm btn-primary">Edit</a></td>
+                                <td>Taupik Pathurrohman</td>
+                                <td>Guru Produktif</td>
+                                
 
 
 
@@ -83,10 +80,9 @@
                             <tr>
                                 <th width="10%">No</th>
 
-                                <th>Tingkatan</th>
-                                <th>Jurusan</th>
-                                <th>Nomor</th>
-                                <th>Aksi</th>
+                                <th>Nama</th>
+                                <th>Bidang</th>
+                              
 
 
 

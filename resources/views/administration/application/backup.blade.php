@@ -6,7 +6,7 @@
 @endpush
 
 @section('title')
-
+<<<<<<< HEAD
     SiMaput | Lamaran
 @endsection
 
@@ -32,6 +32,106 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="datatables">
+        <div class="card">
+            <div class="card-body">
+                <div class="mb-5 position-relative">
+                    <h4 class="card-title mb-0">Daftar Pelamar
+                       
+
+                </div>
+
+                <div class="table-responsive">
+                    <table id="file_export" class="table w-100 table-striped table-bordered display text-nowrap">
+                        <thead>
+                            <!-- start row -->
+                            <tr>
+                                <th width="10%">No</th>
+
+                                <th>Nama</th>
+                                <th>Bidang</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+
+
+
+                            </tr>
+                            <!-- end row -->
+                        </thead>
+                        <tbody>
+                            <!-- start row -->
+                            <tr>
+                                <td width="10%">No</td>
+
+                                <td>Taupik Pathurrohman</td>
+                                <td>Guru Produktif</td>
+                                <td><span class="mb-1 badge  bg-secondary-subtle text-secondary">Belum Wawancara</span></td>
+                                <td>
+                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-info">Detail</a>
+                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-primary">Interview</a>
+                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-success">Terima</a>
+                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-danger">Tolak</a>
+
+                                </td>
+
+
+
+                            </tr>
+                            <!-- end row -->
+
+                        </tbody>
+                        <tfoot>
+                            <!-- start row -->
+
+
+                            <tr>
+                                <th width="10%">No</th>
+
+                                <th>Nama</th>
+                                <th>Bidang</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+
+
+
+
+                            </tr>
+                            <!-- end row -->
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+=======
+    SITAW | Daftar Tahun Ajaran
+@endsection
+
+@section('content')
+
+    <div class="container-fluid">
+      <div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+        <div class="card-body px-4 py-3">
+          <div class="row align-items-center">
+            <div class="col-9">
+              <h4 class="fw-semibold mb-8">LAMARAN</h4>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item" aria-current="page">Biodata</li>
+                  <li class="breadcrumb-item">
+                    <a class="text-muted text-decoration-none" href="../main/index.html">Persyaratan Lamaran</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col-3">
+              <div class="text-center mb-n5">
+                <img src="../assets/images/breadcrumb/ChatBc.png" alt="modernize-img" class="img-fluid mb-n4" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="card">
@@ -60,7 +160,7 @@
               <span class="d-none d-md-block">Riwayat Pendidikan</span>
             </button>
           </li>
-        </ul> 
+        </ul>
         <div class="card-body">
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab" tabindex="0">
@@ -468,81 +568,10 @@
           </div>
         </div>
       </div>
-=======
->>>>>>> 483289dfcfe39f6cc43d408d91355f0a72b5728a
     </div>
-    <div class="datatables">
-        <div class="card">
-            <div class="card-body">
-                <div class="mb-5 position-relative">
-                    <h4 class="card-title mb-0">Daftar Pelamar
-                       
-
-                </div>
-
-                <div class="table-responsive">
-                    <table id="file_export" class="table w-100 table-striped table-bordered display text-nowrap">
-                        <thead>
-                            <!-- start row -->
-                            <tr>
-                                <th width="10%">No</th>
-
-                                <th>Nama</th>
-                                <th>Bidang</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
-
-
-
-                            </tr>
-                            <!-- end row -->
-                        </thead>
-                        <tbody>
-                            <!-- start row -->
-                            <tr>
-                                <td width="10%">No</td>
-
-                                <td>Taupik Pathurrohman</td>
-                                <td>Guru Produktif</td>
-                                <td><span class="mb-1 badge  bg-secondary-subtle text-secondary">Belum Wawancara</span></td>
-                                <td>
-                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-info">Detail</a>
-                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-primary">Interview</a>
-                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-success">Terima</a>
-                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-danger">Tolak</a>
-
-                                </td>
-
-
-
-                            </tr>
-                            <!-- end row -->
-
-                        </tbody>
-                        <tfoot>
-                            <!-- start row -->
-
-
-                            <tr>
-                                <th width="10%">No</th>
-
-                                <th>Nama</th>
-                                <th>Bidang</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
-
-
-
-
-                            </tr>
-                            <!-- end row -->
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
+  </div>
+    
+>>>>>>> 7d123218ff55d567b8fbb5a4081dccb4d040f5ae
 @endsection
 
 
@@ -553,10 +582,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-
+<<<<<<< HEAD
     {{-- <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script> --}}
-
+=======
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+>>>>>>> 7d123218ff55d567b8fbb5a4081dccb4d040f5ae
 
     <script src="{{ asset('assets/js/datatable/datatable-advanced.init.js') }}"></script>
 @endpush

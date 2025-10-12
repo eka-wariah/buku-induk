@@ -6,7 +6,7 @@
 @endpush
 
 @section('title')
-    SiMaput | Kelas
+    SiMaput | Persayratan Lamaran
 @endsection
 
 @section('content')
@@ -14,13 +14,13 @@
         <div class="card-body px-4 py-3">
             <div class="row align-items-center">
                 <div class="col-9">
-                    <h4 class="fw-semibold mb-8">KELAS</h4>
+                    <h4 class="fw-semibold mb-8">PERSYARATAN LAMARAN</h4>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
                                 <a class="text-muted text-decoration-none" href="../main/index.html">Home</a>
                             </li>
-                            <li class="breadcrumb-item" aria-current="page">Daftar Kelas</li>
+                            <li class="breadcrumb-item" aria-current="page">Daftar Persyaratan Lamaran</li>
 
                         </ol>
                     </nav>
@@ -37,9 +37,9 @@
         <div class="card">
             <div class="card-body">
                 <div class="mb-5 position-relative">
-                    <h4 class="card-title mb-0">Daftar Kelas
+                    <h4 class="card-title mb-0">Daftar Persyaratan Lamaran
                         <a href="/administration/classes/create"
-                            class="btn btn-primary btn-sm position-absolute top-0 end-0">Tambah Kelas</a>
+                            class="btn btn-primary btn-sm position-absolute top-0 end-0">Tambah Persyaratan</a>
 
                 </div>
 
@@ -50,10 +50,9 @@
                             <tr>
                                 <th width="10%">No</th>
 
-                                <th>Tingkatan</th>
-                                <th>Jurusan</th>
-                                <th>Nomor</th>
-                                <th>Aksi</th>
+                            
+                                <th>Persyaratan</th>
+                                
 
 
 
@@ -63,12 +62,11 @@
                         <tbody>
                             <!-- start row -->
                             <tr>
-                                <td width="10%">No</td>
+                                <td width="10%">1</td>
 
-                                <td>XII</td>
-                                <td>PPLG</td>
-                                <td>1</td>
-                                <td><a href="/administration/classes/1/edit" class="btn btn-sm btn-primary">Edit</a></td>
+                                <td>CV</td>
+                             
+                             
 
 
 
@@ -83,10 +81,8 @@
                             <tr>
                                 <th width="10%">No</th>
 
-                                <th>Tingkatan</th>
-                                <th>Jurusan</th>
-                                <th>Nomor</th>
-                                <th>Aksi</th>
+                            
+                                <th>Persyaratan</th>
 
 
 

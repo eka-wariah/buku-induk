@@ -30,6 +30,28 @@ Route::get('/administration/classes/{id}/edit', function () {
     return view('administration.classes.edit');
 });
 
+
+
+// Persyaratan Lamaran
+Route::get('/administration/application-requirements', function () {
+    return view('administration.applicationRequirements.index');
+});
+Route::get('/administration/application-requirements/create', function () {
+    return view('administration.applicationRequirements.create');
+});
+
+
+//lamaran
+Route::get('/administration/application', function () {
+    return view('administration.application.index');
+});
+Route::get('/administration/application-accepted', function () {
+    return view('administration.application.accepted');
+});
+Route::get('/administration/application-rejected', function () {
+    return view('administration.application.rejected');
+});
+
 Route::get('/administration/major', [MajorController::class, 'index'])->name('major');
 Route::get('/administration/major/create', [MajorController::class, 'create'])->name('major.create');
 Route::get('/administration/major/{id}/edit', [MajorController::class, 'edit'])->name('major.edit');
@@ -78,5 +100,6 @@ Route::get('/administration/teacher-administration/{id}/edit', function () {
 Route::get('/student/student-admission', function () {
     return view('student.admission.index');
 });
+
 
 require __DIR__.'/auth.php';
