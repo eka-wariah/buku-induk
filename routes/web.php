@@ -111,8 +111,23 @@ Route::get('/administration/module/{id}/edit', function () {
     return view('administration.modul.edit');
 });
 
+Route::get('/teacher/question/create', function () {
+    return view('teacher.task.question');
+});
+
 Route::get('/student/student-admission', function () {
     return view('student.admission.index');
+});
+
+//Tugas Siswa
+Route::get('/student/task', function () {
+    return view('student.task.index');
+});
+Route::get('/student/task/{id}/assignment', function () {
+    return view('teacher.task.assignment');
+});
+Route::get('/student/task/{id}/detail', function () {
+    return view('student.task.detail');
 });
 
 
