@@ -52,6 +52,7 @@ Route::get('/administration/application-rejected', function () {
     return view('administration.application.rejected');
 });
 
+//Jurusan
 Route::get('/administration/major', [MajorController::class, 'index'])->name('major');
 Route::get('/administration/major/create', [MajorController::class, 'create'])->name('major.create');
 Route::get('/administration/major/{id}/edit', [MajorController::class, 'edit'])->name('major.edit');
@@ -60,20 +61,21 @@ Route::get('/administration/school_year', [AcademicYearController::class, 'index
 Route::get('/administration/school_year/create', [AcademicYearController::class, 'create'])->name('school_year.create');
 Route::get('/administration/school_year/{id}/edit', [AcademicYearController::class, 'edit'])->name('school_year.edit');
 
+//Pelamar
 Route::get('/administration/applications', function () {
-    return view('administration.application.index');
+    return view('administration.applicant.index');
 });
 Route::get('/administration/applications/Application-requirements', function () {
-    return view('administration.application.create');
+    return view('administration.applicant.requirement');
 });
 Route::get('/administration/applications/pending', function () {
     return view('administration.application.pending');
 });
 
+//Guru
 Route::get('/administration/teacher', function () {
     return view('administration.teacher.index');
 });
-
 Route::get('/administration/teacher2', function () {
     return view('administration.teacher.index2');
 });
@@ -87,6 +89,7 @@ Route::get('/administration/teacher/{id}/employment status/edit', function () {
     return view('administration.teacher.edit_employe');
 });
 
+//Administrasi Guru
 Route::get('/administration/teacher-administration', function () {
     return view('administration.teacher_administration.index');
 });
@@ -95,6 +98,17 @@ Route::get('/administration/teacher-administration/create', function () {
 });
 Route::get('/administration/teacher-administration/{id}/edit', function () {
     return view('administration.teacher_administration.edit');
+});
+
+//Modul
+Route::get('/administration/module', function () {
+    return view('administration.modul.index');
+});
+Route::get('/administration/module/create', function () {
+    return view('administration.modul.create');
+});
+Route::get('/administration/module/{id}/edit', function () {
+    return view('administration.modul.edit');
 });
 
 Route::get('/student/student-admission', function () {

@@ -15,15 +15,14 @@
             <div class="card-body px-4 py-3">
               <div class="row align-items-center">
                 <div class="col-9">
-                  <h4 class="fw-semibold mb-8">JURUSAN</h4>
+                  <h4 class="fw-semibold mb-8">MODUL</h4>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                    <li class="breadcrumb-item" aria-current="page">Daftar Jurusan</li>
+                    <li class="breadcrumb-item" aria-current="page">Daftar Modul</li>
                       <li class="breadcrumb-item">
-                        <a class="text-muted text-decoration-none" href="/administration/major/create">Tambah Jurusan</a>
+                        <a class="text-muted text-decoration-none" href="/administration/module/create">Tambah Modul</a>
                       </li>
-                      <li class="breadcrumb-item">
-                        <a class="text-muted text-decoration-none" href="/administration/major/{id}/edit">Edit Jurusan</a>
+                      <li class="breadcrumb-item" aria-current="page">Edit Modul</a>
                       </li>
                     </ol>
                    
@@ -53,8 +52,9 @@
                             <!-- start row -->
                             <tr>
                                 <th width="10%">No</th>
-                                <th>Nama Jurusan</th>
-                                <th>Singkatan</th>
+                                <th>Nama Modul</th>
+                                <th>File Modul</th>
+                                <th>Tanggal Akses</th>
                                 <th>Aksi</th>
                                 
                             </tr>
@@ -71,10 +71,11 @@
                             
 
                             <tr>
-                                <th width="10%">No</th>
-                                <th>Nama Jurusan</th>
-                                <th>Singkatan</th>
-                                <th>Aksi</th>
+                              <th width="10%">No</th>
+                              <th>Nama Modul</th>
+                              <th>File Modul</th>
+                              <th>Tanggal Akses</th>
+                              <th>Aksi</th>
                             </tr>
                             <!-- end row -->
                         </tfoot>
