@@ -6,78 +6,109 @@
 @endpush
 
 @section('title')
-    SITAW | Daftar Jurusan
+    SITAW | Daftar Kategori Sampah
 @endsection
 
 @section('content')
-<div class="container-xxl py-4">
-  <div class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <h4 class="card-title mb-0">Daftar Guru</h4>
-      <a class="btn btn-primary btn-sm">
-        <i class="ti ti-plus"></i> Tambah Guru
-      </a>
-    </div>
-
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table table-striped align-middle">
-          <thead class="table-light">
-            <tr>
-              <th>#</th>
-              <th>Nama Lengkap</th>
-              <th>NIP</th>
-              <th>Jenis Kelamin</th>
-              <th>Status</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <span class="badge bg-success"></span>
-              </td>
-              <td>
-                <div class="btn-group" role="group">
-                  <a class="btn btn-outline-primary btn-sm" title="Edit Biodata">
-                    <i class="ti ti-user"></i>
-                  </a>
-                  <a class="btn btn-outline-info btn-sm" title="Edit Kontak">
-                    <i class="ti ti-phone"></i>
-                  </a>
-                  <a class="btn btn-outline-warning btn-sm" title="Edit Suami/Isteri">
-                    <i class="ti ti-heart"></i>
-                  </a>
-                  <a class="btn btn-outline-secondary btn-sm" title="Edit Kepegawaian">
-                    <i class="ti ti-briefcase"></i>
-                  </a>
-                  <a  class="btn btn-outline-success btn-sm" title="Edit Data Mengajar">
-                    <i class="ti ti-school"></i>
-                  </a>
-                  <a  class="btn btn-outline-dark btn-sm" title="Edit Riwayat Mengajar">
-                    <i class="ti ti-history"></i>
-                  </a>
-                  <a  class="btn btn-outline-primary btn-sm" title="Edit Riwayat Pendidikan">
-                    <i class="ti ti-book"></i>
-                  </a>
-                  <a  class="btn btn-outline-info btn-sm" title="Detail Guru">
-                    <i class="ti ti-eye"></i>
-                  </a>
-                  <a  target="_blank" class="btn btn-outline-danger btn-sm" title="Print Kartu Guru">
-                    <i class="ti ti-printer"></i>
-                  </a>
+    <div class="datatables">
+        <div class="card">
+            <div class="card-body">
+                <div class="mb-5 position-relative">
+                    <h4 class="card-title mb-0">Daftar Kategori</h4>
+                    <a href="/admin/administrator/create" class="btn btn-primary position-absolute top-0 end-0">Tambah Kategori</a>
                 </div>
-              </td>
-            </tr>
-       
-          </tbody>
-        </table>
-      </div>
+                <p class="card-subtitle mb-3">
+                    
+                </p>
+                <div class="table-responsive">
+                    <table id="file_export" class="table w-100 table-striped table-bordered display text-nowrap">
+                        <thead>
+                            <!-- start row -->
+                            <tr>
+                                <th width="10%">No</th>
+                                <th>Nama</th>
+                                <th>TTL</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Agama</th>
+                                <th>Status Nikah</th>
+                                <th>Aksi</th>
+                                
+                            </tr>
+                            <!-- end row -->
+                        </thead>
+                        <tbody>
+                            <!-- start row -->
+                            {{-- @foreach ($administrators as $no=> $adminnistrators)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $administrators->user->name }}</td>
+                                <td>{{ $administrators->user->email }}</td>
+                                <td>{{ $administrators->$scope_categories->scs_level }}{{$administrators->$scope_categories->scs_number}}</td>
+                                <td>{{ $user->created_at->format('d M Y H:i') }}</td>
+                                <td>
+                                    <a href="/admin/scope_category/{{$scope_categories->scs_id}}/edit" class="btn btn-primary">Edit</a>
+                                    <a href="/admin/scope_category/{{$scope_categories->scs_id}}/destroy" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                                    </form>
+
+                               </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="4" class="text-center">No registered users found.</td>
+                            </tr>
+                            @endforeach --}}
+                            <!-- end row --> 
+                            <tr>
+                                
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                
+                                <td>
+                                  <a href="/administration/classes/1/edit" class="btn btn-sm btn-info">Detail</a>
+                                    </form>
+
+                               </td>            
+                            </tr>
+                    
+                            
+                        </tbody>
+                        <tfoot>
+                            <!-- start row -->
+                            
+
+                            <tr>
+                              <th width="10%">No</th>
+                              <th>Nama</th>
+                              <th>TTL</th>
+                              <th>Jenis Kelamin</th>
+                              <th>Agama</th>
+                              <th>Status Nikah</th>
+                              <th>Aksi</th>
+                            </tr>
+                            <!-- end row -->
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+    
 @endsection
+
+
+
+@push('script')
+    <script src="{{ asset('assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+    <script src="{{ asset('assets/js/datatable/datatable-advanced.init.js') }}"></script>
+@endpush
