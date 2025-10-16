@@ -6,6 +6,7 @@
 @endpush
 
 @section('title')
+
     SiMaput | Lamaran
 @endsection
 
@@ -14,7 +15,7 @@
         <div class="card-body px-4 py-3">
             <div class="row align-items-center">
                 <div class="col-9">
-                    <h4 class="fw-semibold mb-8">Lamaran</h4>
+                    <h4 class="fw-semibold mb-8">Lamaran Ditolak</h4>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
@@ -32,12 +33,12 @@
                 </div>
             </div>
         </div>
-    </div>
+       </div>
     <div class="datatables">
         <div class="card">
             <div class="card-body">
                 <div class="mb-5 position-relative">
-                    <h4 class="card-title mb-0">Daftar Pelamar Ditolak
+                    <h4 class="card-title mb-0">Daftar Pelamar
                        
 
                 </div>
@@ -51,7 +52,8 @@
 
                                 <th>Nama</th>
                                 <th>Bidang</th>
-                                
+                               
+                                <th>Aksi</th>
 
 
 
@@ -65,7 +67,12 @@
 
                                 <td>Taupik Pathurrohman</td>
                                 <td>Guru Produktif</td>
-                                
+                            
+                                <td>
+                                    <a href="/administration/application/1/detail" class="btn btn-sm btn-info">Detail</a>
+                                    
+
+                                </td>
 
 
 
@@ -82,7 +89,8 @@
 
                                 <th>Nama</th>
                                 <th>Bidang</th>
-                              
+                               
+                                <th>Aksi</th>
 
 
 
@@ -95,6 +103,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 
@@ -105,8 +114,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+
     {{-- <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script> --}}
+
 
     <script src="{{ asset('assets/js/datatable/datatable-advanced.init.js') }}"></script>
 @endpush

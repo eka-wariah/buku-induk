@@ -51,6 +51,9 @@ Route::get('/administration/application-accepted', function () {
 Route::get('/administration/application-rejected', function () {
     return view('administration.application.rejected');
 });
+Route::get('/administration/application/{id}/detail', function () {
+    return view('administration.application.detail');
+});
 
 //Jurusan
 Route::get('/administration/major', [MajorController::class, 'index'])->name('major');

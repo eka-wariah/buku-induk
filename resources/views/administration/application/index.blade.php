@@ -69,10 +69,10 @@
                                 <td>Guru Produktif</td>
                                 <td><span class="mb-1 badge  bg-secondary-subtle text-secondary">Belum Wawancara</span></td>
                                 <td>
-                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-info">Detail</a>
-                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-primary">Interview</a>
-                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-success">Terima</a>
-                                    <a href="/administration/classes/1/edit" class="btn btn-sm btn-danger">Tolak</a>
+                                    <a href="/administration/application/1/detail" class="btn btn-sm btn-info">Detail</a>
+                                    <a href="/administration/application/1/interview" class="btn btn-sm btn-primary">Interview</a>
+                                    <a href="/administration/applcation/1/accepted" class="btn btn-sm btn-success">Terima</a>
+                                    <a href="/administration/applcation/1/rejected" class="btn btn-sm btn-danger">Tolak</a>
 
                                 </td>
 
