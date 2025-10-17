@@ -14,16 +14,16 @@
     <div class="card-body px-4 py-3">
       <div class="row align-items-center">
         <div class="col-9">
-            <h4 class="fw-semibold mb-8">GURU</h4>
+            <h4 class="fw-semibold mb-8">TATA USAHA</h4>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                  <li class="breadcrumb-item" aria-current="page">Daftar Guru</a>
+                  <li class="breadcrumb-item" aria-current="page">Daftar Tata Usaha</a>
                     </li>
                 <li class="breadcrumb-item">
-                  <a class="text-muted text-decoration-none" href="/administration/teacher/{id}/edit">Edit Data Guru</a>
+                  <a class="text-muted text-decoration-none" href="/administration/teacher/{id}/edit">Edit Data Tata Usaha</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a class="text-muted text-decoration-none" href="/administration/teacher/import">Import Data Guru</a>
+                    <a class="text-muted text-decoration-none" href="/administration/teacher/import">Import Data Tata Usaha</a>
                   </li>
               </ol>
              
@@ -40,8 +40,8 @@
   <div class="card">
     <div class="card-body">
         <div class="mb-5 position-relative">
-            <h4 class="card-title mb-0">Daftar Guru</h4>
-            <a href="/administration/teacher/{id}/edit" class="btn btn-primary position-absolute top-0 end-0">Import Guru</a>
+            <h4 class="card-title mb-0">Data Tata Usaha</h4>
+           
         </div>
 <div class="card overflow-hidden chat-application">
     
@@ -90,21 +90,21 @@
           </button>
         </li>
 
-        <li class="list-group-item p-0">
+        {{-- <li class="list-group-item p-0">
           <button class="nav-link w-100 text-start py-3 px-4 d-flex align-items-center"
             id="pills-smk-tab" data-bs-toggle="pill" data-bs-target="#pills-smk" type="button" role="tab"
             aria-controls="pills-smk" aria-selected="false">
             <i class="ti ti-school me-3 fs-5"></i> Edit data mengajar di SMKS Mahaputra
           </button>
         </li>
-  
-        <li class="list-group-item p-0">
+   --}}
+        {{-- <li class="list-group-item p-0">
           <button class="nav-link w-100 text-start py-3 px-4 d-flex align-items-center"
             id="pills-teaching-tab" data-bs-toggle="pill" data-bs-target="#pills-teaching" type="button" role="tab"
             aria-controls="pills-teaching" aria-selected="false">
             <i class="ti ti-article me-3 fs-5"></i> Riwayat Mengajar
           </button>
-        </li>
+        </li> --}}
   
         <li class="list-group-item p-0">
           <button class="nav-link w-100 text-start py-3 px-4 d-flex align-items-center"
@@ -431,12 +431,49 @@
                       </form>
         </div>
 
-        <div class="tab-pane fade" id="pills-smk" role="tabpanel" aria-labelledby="pills-smk-tab">
+        {{-- <div class="tab-pane fade" id="pills-smk" role="tabpanel" aria-labelledby="pills-smk-tab">
           <h5>Riwayat Mengajar</h5>
-          <p>Isi konten di sini...</p>
-        </div>
+          <p class="card-subtitle mb-4">Untuk mengubah detail pribadi Anda, edit dan simpan dari sini</p>
+                      <form>
+                        <div class="row">
+                          <div class="col-lg-6">          
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Mata Pelajaran</label>
+                                <input type="text" name="" class="form-control" placeholder="Nama Sekolah Dasar" required>
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Tahun Pelajaran</label>
+                                <select class="form-select" name="agama" aria-label="Pilih Agama" required>
+                                  <option hidden value="">Pilih</option>
+                                  <option value=""></option>
+                                  <option value=""></option>
+                                </select>
+                              </div>                    
+                            </div>
+                       
+                          <div class="col-lg-6">
+                            <div class="mb-3">
+                              <label for="exampleInputtext" class="form-label">Tingkat/Kelas</label>
+                              <select class="form-select" name="agama" aria-label="Pilih Agama" required>
+                                <option hidden value="">Pilih</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                              </select>
+                            </div>
+                            
+                          <br><br><br><br>
+                          <div class="col-12">
+                            <div class="d-flex align-items-center justify-content-end mt-4 gap-6">
+                              <button class="btn btn-primary">Save</button>
+                              <button class="btn bg-danger-subtle text-danger">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+      </div> --}}
   
-        <div class="tab-pane fade" id="pills-teaching" role="tabpanel" aria-labelledby="pills-teaching-tab">
+        {{-- <div class="tab-pane fade" id="pills-teaching" role="tabpanel" aria-labelledby="pills-teaching-tab">
           <h5>Riwayat Mengajar</h5>
           <p class="card-subtitle mb-4">
             Tambahkan pengalaman mengajar Anda, bisa lebih dari satu sekolah atau mata pelajaran.
@@ -518,7 +555,7 @@
               </div>
             </div>
           </form>
-        </div>
+        </div> --}}
   
         <div class="tab-pane fade" id="pills-education" role="tabpanel" aria-labelledby="pills-education-tab">
           <h5>Riwayat Pendidikan</h5>

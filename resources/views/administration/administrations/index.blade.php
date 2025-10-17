@@ -14,8 +14,8 @@
         <div class="card">
             <div class="card-body">
                 <div class="mb-5 position-relative">
-                    <h4 class="card-title mb-0">Daftar Kategori</h4>
-                    <a href="/administration/teacher/import" class="btn btn-primary position-absolute top-0 end-0">Import Data</a>
+                    <h4 class="card-title mb-0">Daftar Tata Usaha</h4>
+                    <a href="/administration/administration/import" class="btn btn-primary position-absolute top-0 end-0">Import Data</a>
                 </div>
                 <p class="card-subtitle mb-3">
                     
@@ -68,7 +68,7 @@
                                 <td></td>
                                 
                                 <td>
-                                  <a href="/administration/teacher/{id}/detail" class="btn btn-sm btn-info">Detail</a>
+                                  <a href="/administration/administration/{id}/detail" class="btn btn-sm btn-info">Detail</a>
                                     </form>
 
                                </td>            

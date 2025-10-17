@@ -79,8 +79,8 @@ Route::get('/administration/applications/pending', function () {
 Route::get('/administration/teacher', function () {
     return view('administration.teacher.index');
 });
-Route::get('/administration/teacher2', function () {
-    return view('administration.teacher.index2');
+Route::get('/administration/teacher/{id}/detail', function () {
+    return view('administration.teacher.detail');
 });
 Route::get('/administration/teacher/import', function () {
     return view('administration.teacher.import');
@@ -142,6 +142,20 @@ Route::get('/administration/subject-schedule/create', function () {
 });
 Route::get('/administration/subject-schedule/{id}/edit', function () {
     return view('administration.subject_schedule.edit');
+});
+
+//TU
+Route::get('/administration/administration', function () {
+    return view('administration.administrations.index');
+});
+Route::get('/administration/administration/{id}/detail', function () {
+    return view('administration.administrations.detail');
+});
+Route::get('/administration/administration/import', function () {
+    return view('administration.administrations.import');
+});
+Route::get('/administration/administration/{id}/edit', function () {
+    return view('administration.administrations.edit');
 });
 
 require __DIR__.'/auth.php';

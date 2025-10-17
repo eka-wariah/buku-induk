@@ -15,16 +15,16 @@
             <div class="card-body px-4 py-3">
               <div class="row align-items-center">
                 <div class="col-9">
-                  <h4 class="fw-semibold mb-8">GURU</h4>
+                  <h4 class="fw-semibold mb-8">TATA USAHA</h4>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a class="text-muted text-decoration-none" href="/administration/teacher">Daftar Guru</a>
+                            <a class="text-muted text-decoration-none" href="/administration/teacher">Daftar Tata Usaha</a>
                           </li>
                       <li class="breadcrumb-item">
-                        <a class="text-muted text-decoration-none" href="/administration/major/create">Edit Data Guru</a>
+                        <a class="text-muted text-decoration-none" href="/administration/major/create">Edit Data Tata Usaha</a>
                       </li>
-                      <li class="breadcrumb-item" aria-current="page">Import Data Guru</a>
+                      <li class="breadcrumb-item" aria-current="page">Import Data Tata Usaha</a>
                       </li>
                     </ol>
                    
@@ -42,7 +42,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="mb-5 position-relative">
-                    <h4 class="card-title mb-0">Import File Data Guru</h4>
+                    <h4 class="card-title mb-0">Import File Data Tata Usaha</h4>
                 </div>
                 
                 <form>
