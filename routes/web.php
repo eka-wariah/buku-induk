@@ -158,4 +158,31 @@ Route::get('/administration/administration/{id}/edit', function () {
     return view('administration.administrations.edit');
 });
 
+
+
+
+
+//persyaratan PPDB
+Route::get('/administration/student-admission-requirements', function () {
+    return view('administration.studentAdmissionRequirements.index');
+});
+Route::get('/administration/student-admission-requirements/craete', function () {
+    return view('administration.studentAdmissionRequirements.create');
+});
+
+
+
+// Kelola PPDB
+Route::get('/administration/student-admission', function () {
+    return view('administration.studentAdmission.index');
+});
+Route::get('/administration/student-admission/pending', function () {
+    return view('administration.studentAdmission.pending');
+});
+Route::get('/administration/student-admission/accepted', function () {
+    return view('administration.studentAdmission.accepted');
+});
+Route::get('/administration/student-admission/rejected', function () {
+    return view('administration.studentAdmission.rejected');
+});
 require __DIR__.'/auth.php';
