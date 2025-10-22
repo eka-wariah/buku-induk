@@ -61,11 +61,26 @@
                             <!-- end row -->
                         </thead>
                         <tbody>
-                            <!-- start row -->
-                            
-                            <!-- end row -->
-                            
-                        </tbody>
+                          <!-- start row -->
+                          @foreach ( $majors as $no=> $major)
+                          <tr>
+                              
+                              <td>{{$no+1}}</td>
+                              <td>{{ $major->mjr_name}}</td>
+                              <td>{{ $major->mjr_abbr}}</td>
+                              <td>
+                                   <a href="/administration/major/{{ $major->mjr_id}}/edit" class="btn btn-primary">Edit</a>
+                                   <a href="/administration/major/{{ $major->mjr_id}}/destroy" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+
+                              </td>
+
+
+                              
+                          </tr>
+                          @endforeach
+                          <!-- end row -->
+                          
+                      </tbody>
                         <tfoot>
                             <!-- start row -->
                             

@@ -61,7 +61,11 @@ Route::get('/administration/application/{id}/detail', function () {
 //Jurusan
 Route::get('/administration/major', [MajorController::class, 'index'])->name('major');
 Route::get('/administration/major/create', [MajorController::class, 'create'])->name('major.create');
+Route::post('/administration/major/create', [MajorController::class, 'store'])->name('major.store');
 Route::get('/administration/major/{id}/edit', [MajorController::class, 'edit'])->name('major.edit');
+Route::post('/administration/major/{id}/edit', [MajorController::class, 'update'])->name('major.update');
+Route::delete('/administration/major/{id}/destroy', [MajorController::class, 'destroy'])->name('major.destroy');
+
 
 Route::get('/administration/school_year', [AcademicYearController::class, 'index'])->name('school_year');
 Route::get('/administration/school_year/create', [AcademicYearController::class, 'create'])->name('school_year.create');

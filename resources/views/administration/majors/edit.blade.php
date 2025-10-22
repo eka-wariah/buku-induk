@@ -47,7 +47,7 @@
                 <div class="mb-4 row align-items-center">
                     <label for="exampleInputText1" class="form-label col-sm-3 col-form-label">Nama Jurusan</label>
                     <div class="col-sm-9">
-                      <input type="text" name="" class="form-control" id="exampleInputText1" placeholder="Nama Jurusan" required oninvalid="this.setCustomValidity('Nama Jurusan Wajib Diisi')" 
+                      <input type="text" name="mjr_name" value="{{$EditMajor->mjr_name}}"  class="form-control" id="exampleInputText1" placeholder="Nama Jurusan" required oninvalid="this.setCustomValidity('Nama Jurusan Wajib Diisi')" 
                       onchange="this.setCustomValidity('')">
                     </div>
                     @error('')
@@ -57,7 +57,7 @@
                   <div class="mb-4 row align-items-center">
                     <label for="exampleInputText1" class="form-label col-sm-3 col-form-label">Singkatan</label>
                     <div class="col-sm-9">
-                      <input type="text" name="" class="form-control" id="exampleInputText1" placeholder="Singkatan Jurusan" required oninvalid="this.setCustomValidity('Nama Jurusan Wajib Diisi')" 
+                      <input type="text" name="mjr_abbr" value="{{$EditMajor->mjr_abbr}}"  class="form-control" id="exampleInputText1" placeholder="Singkatan Jurusan" required oninvalid="this.setCustomValidity('Nama Jurusan Wajib Diisi')" 
                       onchange="this.setCustomValidity('')">
                     </div>
                     @error('')
