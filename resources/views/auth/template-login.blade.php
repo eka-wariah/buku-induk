@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/favicon.png') }}" />
 
     <!-- Core Css -->
-    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
 
     <title>Modernize Bootstrap Admin</title>
 </head>
@@ -19,7 +19,7 @@
 <body>
     <!-- Preloader -->
     <div class="preloader">
-        <img src="../assets/images/logos/favicon.png" alt="loader" class="lds-ripple img-fluid" />
+        <img src="{{ asset('assets/images/logos/favicon.png') }}" alt="loader" class="lds-ripple img-fluid" />
     </div>
     <div id="main-wrapper" class="auth-customizer-none">
         <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
@@ -47,7 +47,7 @@
                                             href="javascript:void(0)" role="button">
                                             <img src="../assets/images/svgs/google-icon.svg" alt="modernize-img"
                                                 class="img-fluid me-2" width="18" height="18">
-                                            <span class="flex-shrink-0">with Google</span>
+                                            <span class="flex-shrink-0"> Dengan Google</span>
                                         </a>
                                     </div>
                                     {{-- <div class="col-6">
@@ -61,53 +61,46 @@
                                     <p
                                         class="mb-0 fs-4 px-3 d-inline-block bg-body text-dark z-index-5 position-relative">
                                         or sign
-                                        Up
+                                        in
                                         with</p>
                                     <span
                                         class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
                                 </div>
-                                <form method="post" action="{{ route('register') }}">
+                                <form method="post" action="{{ route('login') }}">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Nama</label>
-                                        <input name="name" value="{{ old('name') }}" required autofocus
-                                            autocomplete="name" class="form-control" id="exampleInputtext"
-                                            aria-describedby="textHelp">
-                                             @error('name')
-                                            <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Alamat Email</label>
-                                        <input type="email" name="email" value="{{old('email')}}" required
-                                            autocomplete="username" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                             @error('email')
+                                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                                        <input type="email" name="email" value="{{ old('email') }}" required
+                                            autofocus autocomplete="username" class="form-control"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        @error('email')
                                             <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
                                         @enderror
                                     </div>
                                     <div class="mb-4">
                                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" name="password" required autocomplete="new-password"
+                                        <input type="password" name="password" required autocomplete="current-password"
                                             class="form-control" id="exampleInputPassword1">
-                                             @error('password')
-                                            <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
-                                        @enderror
                                     </div>
-                                    <div class="mb-4">
-                                        <label for="exampleInputPassword1" class="form-label">Konfirmasi
-                                            Password</label>
-                                        <input type="password" name="password_confirmation" required
-                                            autocomplete="new-password" class="form-control" id="exampleInputPassword1">
-                                             @error('password_confirmation')
-                                            <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
-                                        @enderror
+
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input primary" type="checkbox" value=""
+                                                id="flexCheckChecked" checked>
+                                            <label class="form-check-label text-dark fs-3" for="flexCheckChecked">
+                                                Remeber this Device
+                                            </label>
+                                        </div>
+                                        <a class="text-primary fw-medium fs-3"
+                                            href="../main/authentication-forgot-password.html">Forgot Password ?</a>
                                     </div>
-                                    <button class="btn btn-primary w-100 py-8 mb-4 rounded-2"> Sign Up</button>
-                                    <div class="d-flex align-items-center">
-                                        <p class="fs-4 mb-0 text-dark">Sudah Punya Akun?</p>
+                                    {{-- <a href="../main/indeax.html" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a> --}}
+                                    <button class="btn btn-primary w-100 py-8 mb-4 rounded-2"> Sign In</button>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <p class="fs-4 mb-0 fw-medium">New to Modernize?</p>
                                         <a class="text-primary fw-medium ms-2"
-                                            href="/login">Sign In</a>
+                                            href="../main/authentication-register.html">Create an
+                                            account</a>
                                     </div>
                                 </form>
                             </div>
@@ -302,11 +295,11 @@
     </div>
     <div class="dark-transparent sidebartoggler"></div>
     <!-- Import Js Files -->
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/libs/simplebar/dist/simplebar.min.js"></script>
-    <script src="../assets/js/theme/app.init.js"></script>
-    <script src="../assets/js/theme/theme.js"></script>
-    <script src="../assets/js/theme/app.min.js"></script>
+    <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
+    <script src="{{ asset('assets/js/theme/app.init.js') }}"></script>
+    <script src="{{ asset('assets/js/theme/theme.js') }}"></script>
+    <script src="{{ asset('assets/js/theme/app.min.js') }}"></script>
 
     <!-- solar icons -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
