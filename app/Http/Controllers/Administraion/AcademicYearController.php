@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Administraion;
 
 use App\Http\Controllers\Controller;
+use App\Models\AcademicYear;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AcademicYearController extends Controller
 {
@@ -12,7 +14,11 @@ class AcademicYearController extends Controller
      */
     public function index()
     {
-        return view('administration.academic_year.index');
+        $academic_year = AcademicYear::all();
+        $title = 'Delete User!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+        return view('administration.academic_year.index', compact('academic_year'));
     }
 
     /**
@@ -28,7 +34,11 @@ class AcademicYearController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $CreateAcademic = AcademicYear::create([
+            'acy_starting_year' => $request->acy_starting_year,
+            'acy_year_over' => $request->acy_year_over,
+        ]); 
+        return redirect('/administration/school_year');
     }
 
     /**
@@ -44,7 +54,8 @@ class AcademicYearController extends Controller
      */
     public function edit(string $id)
     {
-        return view('administration.academic_year.edit');
+        $EditAcademic = AcademicYear::findOrFail($id);
+        return view('administration.academic_year.edit', compact('EditAcademic'));
     }
 
     /**
@@ -52,14 +63,23 @@ class AcademicYearController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $UpdateAcademic =AcademicYear::findOrFail($id); 
+        $UpdateAcademic->acy_starting_year = $request->acy_starting_year;
+        $UpdateAcademic->acy_year_over = $request->acy_year_over;
+        $UpdateAcademic->save();
+
+        Alert::success('Berhasil Mengedit', 'Berhasil mengubah data jurusan');
+        return redirect('/administration/school_year');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(AcademicYear $academic_year, $id)
     {
-        //
+        $DestroyAcademic = AcademicYear::findOrFail($id);
+        //dd ($destroyScopeCategories);
+        $DestroyAcademic->delete();
+        return redirect('/administration/school_year');
     }
 }

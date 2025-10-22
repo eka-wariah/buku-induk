@@ -59,11 +59,25 @@
                             <!-- end row -->
                         </thead>
                         <tbody>
-                            <!-- start row -->
-                            
-                            <!-- end row -->
-                            
-                        </tbody>
+                          <!-- start row -->
+                          @foreach ( $academic_year as $no=> $academic)
+                          <tr>
+                              
+                              <td>{{$no+1}}</td>
+                              <td>{{ $academic->acy_starting_year }}/{{ $academic->acy_year_over }}</td>
+                              <td>
+                                   <a href="/administration/school_year/{{ $academic->acy_id}}/edit" class="btn btn-primary">Edit</a>
+                                   <a href="/administration/school_year/{{ $academic->acy_id}}/destroy" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+
+                              </td>
+
+
+                              
+                          </tr>
+                          @endforeach
+                          <!-- end row -->
+                          
+                      </tbody>
                         <tfoot>
                             <!-- start row -->
                             

@@ -15,14 +15,16 @@ return new class extends Migration
             $table->bigIncrements('acy_id');
             $table->BigInteger('acy_starting_year');
             $table->BigInteger('acy_year_over');
-            $table->BigInteger('acy_status');
+            // $table->BigInteger('acy_status');
             $table->timestamps();
-            $table->softDeletes(); // gunakan deleted_at
-
-            // Kolom audit
+            $table->renameColumn('updated_at', 'acy_updated_at');
+            $table->renameColumn('created_at', 'acy_created_at');
             $table->unsignedBigInteger('acy_created_by')->nullable();
             $table->unsignedBigInteger('acy_deleted_by')->nullable();
             $table->unsignedBigInteger('acy_updated_by')->nullable();
+            
+            $table->softDeletes(); // gunakan deleted_at
+            $table->renameColumn('deleted_at', 'acy_deleted_at');
             $table->string('acy_sys_note')->nullable();
         });
     }

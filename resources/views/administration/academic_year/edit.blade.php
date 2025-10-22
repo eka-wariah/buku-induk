@@ -49,10 +49,11 @@
                   <div class="mb-4 row align-items-center">
                     <label for="Select" class="form-label col-sm-3 col-form-label">Awal Tahun</label>
                     <div class="col-sm-9">
-                        <select id="Select" name="" class="form-control" required>
-                            <option hidden value="">Pilih Tahun</option>
+                        <select id="Select" name="acy_starting_year" class="form-control" required>
                             @for ($year = 2015; $year <= date('Y'); $year++)
-                              <option value="{{ $year }}">{{ $year }}</option>
+                            <option value="{{ $year }}" {{ $EditAcademic->acy_starting_year == $year ? 'selected' : '' }}>
+                              {{ $year }}
+                          </option>
                             @endfor
                           </select>
                     @error('adm_management_scope_id')
@@ -63,10 +64,11 @@
                 <div class="mb-4 row align-items-center">
                     <label for="Select" class="form-label col-sm-3 col-form-label">Akhir Tahun</label>
                     <div class="col-sm-9">
-                        <select id="Select" name="" class="form-control" required>
-                            <option hidden value="">Pilih Tahun</option>
+                        <select id="Select" name="acy_year_over" class="form-control" required>
                             @for ($year = 2015; $year <= date('Y'); $year++)
-                              <option value="{{ $year }}">{{ $year }}</option>
+                            <option value="{{ $year }}" {{ $EditAcademic->acy_year_over == $year ? 'selected' : '' }}>
+                              {{ $year }}
+                          </option>
                             @endfor
                           </select>
                     @error('adm_management_scope_id')

@@ -47,7 +47,7 @@
                   <div class="mb-4 row align-items-center">
                     <label for="Select" class="form-label col-sm-3 col-form-label">Awal Tahun</label>
                     <div class="col-sm-9">
-                        <select id="Select" name="" class="form-control" required>
+                        <select id="Select" name="acy_starting_year" class="form-control" required>
                             <option hidden value="">Pilih Tahun</option>
                             @for ($year = 2015; $year <= date('Y'); $year++)
                               <option value="{{ $year }}">{{ $year }}</option>
@@ -61,7 +61,7 @@
                 <div class="mb-4 row align-items-center">
                     <label for="Select" class="form-label col-sm-3 col-form-label">Akhir Tahun</label>
                     <div class="col-sm-9">
-                        <select id="Select" name="" class="form-control" required>
+                        <select id="Select" name="acy_year_over" class="form-control" required>
                             <option hidden value="">Pilih Tahun</option>
                             @for ($year = 2015; $year <= date('Y'); $year++)
                               <option value="{{ $year }}">{{ $year }}</option>

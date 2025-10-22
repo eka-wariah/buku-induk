@@ -59,17 +59,28 @@ Route::get('/administration/application/{id}/detail', function () {
 });
 
 //Jurusan
-Route::get('/administration/major', [MajorController::class, 'index'])->name('major');
-Route::get('/administration/major/create', [MajorController::class, 'create'])->name('major.create');
-Route::post('/administration/major/create', [MajorController::class, 'store'])->name('major.store');
-Route::get('/administration/major/{id}/edit', [MajorController::class, 'edit'])->name('major.edit');
-Route::post('/administration/major/{id}/edit', [MajorController::class, 'update'])->name('major.update');
-Route::delete('/administration/major/{id}/destroy', [MajorController::class, 'destroy'])->name('major.destroy');
+Route::prefix('administration/major')->controller(MajorController::class)->name('major.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+    Route::get('/{id}/edit', 'edit')->name('edit');
+    Route::post('/{id}/edit', 'update')->name('update');
+    Route::delete('/{id}/destroy', 'destroy')->name('destroy');
+});
+// Route::get('/administration/major', [MajorController::class, 'index'])->name('major');
+// Route::get('/administration/major/create', [MajorController::class, 'create'])->name('major.create');
+// Route::post('/administration/major/create', [MajorController::class, 'store'])->name('major.store');
+// Route::get('/administration/major/{id}/edit', [MajorController::class, 'edit'])->name('major.edit');
+// Route::post('/administration/major/{id}/edit', [MajorController::class, 'update'])->name('major.update');
+// Route::delete('/administration/major/{id}/destroy', [MajorController::class, 'destroy'])->name('major.destroy');
 
 
 Route::get('/administration/school_year', [AcademicYearController::class, 'index'])->name('school_year');
 Route::get('/administration/school_year/create', [AcademicYearController::class, 'create'])->name('school_year.create');
+Route::post('/administration/school_year/create', [AcademicYearController::class, 'store'])->name('school_year.store');
 Route::get('/administration/school_year/{id}/edit', [AcademicYearController::class, 'edit'])->name('school_year.edit');
+Route::post('/administration/school_year/{id}/edit', [AcademicYearController::class, 'update'])->name('school_year.update');
+Route::delete('/administration/school_year/{id}/destroy', [AcademicYearController::class, 'destroy'])->name('school_year.destroy');
 
 //Pelamar
 Route::get('/administration/applications', function () {
