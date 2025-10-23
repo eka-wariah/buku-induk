@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Administraion\AcademicYearController;
+use App\Http\Controllers\Administraion\ClassController;
 use App\Http\Controllers\Administraion\MajorController;
 
 use App\Http\Controllers\ProfileController;
@@ -23,15 +24,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/administration/classes', function () {
-    return view('administration.classes.index');
-});
-Route::get('/administration/classes/create', function () {
-    return view('administration.classes.create');
-});
-Route::get('/administration/classes/{id}/edit', function () {
-    return view('administration.classes.edit');
-});
+// Route::get('/administration/classes', function () {
+//     return view('administration.classes.index');
+// });
+// Route::get('/administration/classes/create', function () {
+//     return view('administration.classes.create');
+// });
+// Route::get('/administration/classes/{id}/edit', function () {
+//     return view('administration.classes.edit');
+// });
 
 
 
@@ -59,28 +60,34 @@ Route::get('/administration/application/{id}/detail', function () {
 });
 
 //Jurusan
-Route::prefix('administration/major')->controller(MajorController::class)->name('major.')->group(function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/create', 'create')->name('create');
-    Route::post('/create', 'store')->name('store');
-    Route::get('/{id}/edit', 'edit')->name('edit');
-    Route::post('/{id}/edit', 'update')->name('update');
-    Route::delete('/{id}/destroy', 'destroy')->name('destroy');
+Route::prefix('administration')->name('administration.')->group(function () {
+    Route::prefix('major')->name('major.')->group(function () {
+        Route::get('/', [MajorController::class, 'index'])->name('index');
+        Route::get('/create', [MajorController::class, 'create'])->name('create');
+        Route::post('/create', [MajorController::class, 'store'])->name('store');
+        Route::get('/{id}/edit', [MajorController::class, 'edit'])->name('edit');
+        Route::post('/{id}/edit', [MajorController::class, 'update'])->name('update');
+        Route::delete('/{id}/destroy', [MajorController::class, 'destroy'])->name('destroy');
+    });
+    Route::prefix('school_year')->name('school_year.')->group(function () {
+        Route::get('/', [AcademicYearController::class, 'index'])->name('school_year');
+        Route::get('/create', [AcademicYearController::class, 'create'])->name('school_year.create');
+        Route::post('/create', [AcademicYearController::class, 'store'])->name('school_year.store');
+        Route::get('/{id}/edit', [AcademicYearController::class, 'edit'])->name('school_year.edit');
+        Route::post('/{id}/edit', [AcademicYearController::class, 'update'])->name('school_year.update');
+        Route::delete('/{id}/destroy', [AcademicYearController::class, 'destroy'])->name('school_year.destroy');
+    });
+    Route::prefix('classes')->name('classes.')->group(function () {
+        Route::get('/', [ClassController::class, 'index'])->name('classes');
+        Route::get('/create', [ClassController::class, 'create'])->name('classes.create');
+        Route::post('/create', [ClassController::class, 'store'])->name('classes.store');
+        Route::get('/{id}/edit', [ClassController::class, 'edit'])->name('classes.edit');
+        Route::post('/{id}/edit', [ClassController::class, 'update'])->name('classes.update');
+        Route::delete('/{id}/destroy', [ClassController::class, 'destroy'])->name('classes.destroy');
+    });
 });
-// Route::get('/administration/major', [MajorController::class, 'index'])->name('major');
-// Route::get('/administration/major/create', [MajorController::class, 'create'])->name('major.create');
-// Route::post('/administration/major/create', [MajorController::class, 'store'])->name('major.store');
-// Route::get('/administration/major/{id}/edit', [MajorController::class, 'edit'])->name('major.edit');
-// Route::post('/administration/major/{id}/edit', [MajorController::class, 'update'])->name('major.update');
-// Route::delete('/administration/major/{id}/destroy', [MajorController::class, 'destroy'])->name('major.destroy');
 
 
-Route::get('/administration/school_year', [AcademicYearController::class, 'index'])->name('school_year');
-Route::get('/administration/school_year/create', [AcademicYearController::class, 'create'])->name('school_year.create');
-Route::post('/administration/school_year/create', [AcademicYearController::class, 'store'])->name('school_year.store');
-Route::get('/administration/school_year/{id}/edit', [AcademicYearController::class, 'edit'])->name('school_year.edit');
-Route::post('/administration/school_year/{id}/edit', [AcademicYearController::class, 'update'])->name('school_year.update');
-Route::delete('/administration/school_year/{id}/destroy', [AcademicYearController::class, 'destroy'])->name('school_year.destroy');
 
 //Pelamar
 Route::get('/administration/applications', function () {

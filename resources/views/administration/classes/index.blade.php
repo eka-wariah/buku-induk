@@ -62,19 +62,25 @@
                         </thead>
                         <tbody>
                             <!-- start row -->
+                            @foreach ( $class as $no=> $class)
                             <tr>
-                                <td width="10%">No</td>
-
-                                <td>XII</td>
-                                <td>PPLG</td>
-                                <td>1</td>
-                                <td><a href="/administration/classes/1/edit" class="btn btn-sm btn-primary">Edit</a></td>
-
-
-
+                                
+                                <td>{{$no+1}}</td>
+                                <td>{{ $class->cls_level}}</td>
+                                <td>{{ $class->major->mjr_abbr ?? '-' }}</td>
+                                <td>{{ $class->cls_number}}</td>
+                                <td>
+                                     <a href="/administration/classes/{{ $class->cls_id}}/edit" class="btn btn-primary">Edit</a>
+                                     <a href="/administration/classes/{{ $class->cls_id}}/destroy" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+  
+                                </td>
+  
+  
+                                
                             </tr>
+                            @endforeach
                             <!-- end row -->
-
+                            
                         </tbody>
                         <tfoot>
                             <!-- start row -->

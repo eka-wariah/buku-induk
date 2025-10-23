@@ -45,13 +45,13 @@
                         <div class="mb-4 row align-items-center">
                             <label for="exampleInputText1" class="form-label col-sm-3 col-form-label">Tingkatan</label>
                             <div class="col-sm-9">
-                                <select class="form-select mr-sm-2" disabled id="inlineFormCustomSelect" name="cls_level"
+                                <select class="form-select mr-sm-2" name="cls_level"
                                     oninvalid="this.setCustomValidity('Tingkatan Wajib Diisi')"
                                     onchange="this.setCustomValidity('')" required>
-                                    {{-- <option selected value="" >Pilih...</option> --}}
+                                    <option selected value="" >Pilih...</option>
                                     <option value="X">X</option>
-                                    {{-- <option value="XI">XI</option>
-                    <option value="XII">XII</option> --}}
+                                    <option value="XI">XI</option>
+                                    <option value="XII">XII</option>
                                 </select>
                             </div>
                             @error('mjr_name')
@@ -61,17 +61,20 @@
                         <div class="mb-4 row align-items-center">
                             <label for="exampleInputText1" class="form-label col-sm-3 col-form-label">Jurusan</label>
                             <div class="col-sm-9">
-                                <select class="form-select mr-sm-2" id="inlineFormCustomSelect" name="cls_major_id"
-                                    oninvalid="this.setCustomValidity('Tingkatan Wajib Diisi')"
+                                <select class="form-select mr-sm-2"  name="cls_major_id"
+                                    oninvalid="this.setCustomValidity('Jurusan wajib diisi')"
                                     onchange="this.setCustomValidity('')" required>
                                     <option selected value="">Pilih...</option>
-
+                                    @foreach ($majors as $major)
+                                        <option value="{{ $major->mjr_id }}">{{ $major->mjr_abbr }} - {{ $major->mjr_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
-                            @error('mjr_name')
-                                <div>error</div>
+                            @error('cls_major_id')
+                                <div class="text-danger small">{{ $message }}</div>
                             @enderror
                         </div>
+                        
                         <div class="mb-4 row align-items-center">
                             <label for="exampleInputText2" class="form-label col-sm-3 col-form-label">Nomor</label>
                             <div class="col-sm-9">
