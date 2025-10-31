@@ -48,7 +48,7 @@
                         <div class="mb-4 row align-items-center">
                             <label for="exampleInputText2" class="form-label col-sm-3 col-form-label">Persyaratan</label>
                             <div class="col-sm-9">
-                                <input type="text" name="sar_name" class="form-control" id="exampleInputText2"
+                                <input type="text" name="sar_name" value="{{$EditAdmission->sar_name}}" class="form-control" id="exampleInputText2"
                                     placeholder="" required oninvalid="this.setCustomValidity('Singkatan Wajib Diisi')"
                                     onchange="this.setCustomValidity('')">
                             </div>

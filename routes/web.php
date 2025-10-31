@@ -3,7 +3,7 @@
 use App\Http\Controllers\Administraion\AcademicYearController;
 use App\Http\Controllers\Administraion\ClassController;
 use App\Http\Controllers\Administraion\MajorController;
-
+use App\Http\Controllers\Administraion\StudentAdmissionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -84,6 +84,14 @@ Route::prefix('administration')->name('administration.')->group(function () {
         Route::get('/{id}/edit', [ClassController::class, 'edit'])->name('classes.edit');
         Route::post('/{id}/edit', [ClassController::class, 'update'])->name('classes.update');
         Route::delete('/{id}/destroy', [ClassController::class, 'destroy'])->name('classes.destroy');
+    });
+    Route::prefix('student-admission-requirements')->name('student-admission-requirements.')->group(function () {
+        Route::get('/', [StudentAdmissionController::class, 'index'])->name('student-admission-requirements');
+        Route::get('/create', [StudentAdmissionController::class, 'create'])->name('student-admission-requirements.classes.create');
+        Route::post('/create', [StudentAdmissionController::class, 'store'])->name('classes.store');
+        Route::get('/{id}/edit', [StudentAdmissionController::class, 'edit'])->name('classes.edit');
+        Route::post('/{id}/edit', [StudentAdmissionController::class, 'update'])->name('classes.update');
+        Route::delete('/{id}/destroy', [StudentAdmissionController::class, 'destroy'])->name('classes.destroy');
     });
 });
 
@@ -188,12 +196,12 @@ Route::get('/administration/administration/{id}/edit', function () {
 
 
 //persyaratan PPDB
-Route::get('/administration/student-admission-requirements', function () {
-    return view('administration.studentAdmissionRequirements.index');
-});
-Route::get('/administration/student-admission-requirements/craete', function () {
-    return view('administration.studentAdmissionRequirements.create');
-});
+// Route::get('/administration/student-admission-requirements', function () {
+//     return view('administration.studentAdmissionRequirements.index');
+// });
+// Route::get('/administration/student-admission-requirements/craete', function () {
+//     return view('administration.studentAdmissionRequirements.create');
+// });
 
 
 

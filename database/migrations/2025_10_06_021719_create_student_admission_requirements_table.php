@@ -15,12 +15,13 @@ return new class extends Migration
             $table->bigIncrements('sar_id');
             $table->string('sar_name');
             $table->timestamps();
-            $table->softDeletes(); // gunakan deleted_at
-
-            // Kolom audit
+            $table->renameColumn('updated_at', 'sar_updated_at');
+            $table->renameColumn('created_at', 'sar_created_at');
             $table->unsignedBigInteger('sar_created_by')->nullable();
             $table->unsignedBigInteger('sar_deleted_by')->nullable();
             $table->unsignedBigInteger('sar_updated_by')->nullable();
+            $table->softDeletes(); // gunakan deleted_at
+            $table->renameColumn('deleted_at', 'sar_deleted_at');
             $table->string('sar_sys_note')->nullable();
         });
     }

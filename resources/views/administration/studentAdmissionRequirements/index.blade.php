@@ -39,7 +39,7 @@
             <div class="card-body">
                 <div class="mb-5 position-relative">
                     <h4 class="card-title mb-0">Daftar Persyaratan PPDB
-                        <a href="/administration/student-admission-requirements/craete"
+                        <a href="/administration/student-admission-requirements/create"
                             class="btn btn-primary btn-sm position-absolute top-0 end-0">Tambah Persyaratan </a>
 
                 </div>
@@ -63,19 +63,23 @@
                         </thead>
                         <tbody>
                             <!-- start row -->
+                            @foreach ( $student_admission as $no=> $admission)
                             <tr>
-                                <td width="10%">1</td>
-
-                                <td>CV</td>
-                                <td><a href="" class="btn btn-danger">Hapus</a></td>
-                             
-                             
-
-
-
+                                
+                                <td>{{$no+1}}</td>
+                                <td>{{ $admission->sar_name}}</td>
+                                <td>
+                                     <a href="/administration/student-admission-requirements/{{ $admission->sar_id}}/edit" class="btn btn-primary">Edit</a>
+                                     <a href="/administration/student-admission-requirements/{{ $admission->sar_id}}/destroy" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+  
+                                </td>
+  
+  
+                                
                             </tr>
+                            @endforeach
                             <!-- end row -->
-
+                            
                         </tbody>
                         <tfoot>
                             <!-- start row -->
