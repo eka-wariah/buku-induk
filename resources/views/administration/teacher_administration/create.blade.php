@@ -41,13 +41,13 @@
           <div class="px-4 py-3 border-bottom">
             <h4 class="card-title mb-0">Tambah Administrasi Guru </h4>
           </div>
-          <form action="" method="post">
+          <form action="" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
                 <div class="mb-4 row align-items-center">
                     <label for="exampleInputText1" class="form-label col-sm-3 col-form-label">Nama Administrasi</label>
                     <div class="col-sm-9">
-                      <input type="text" name="" class="form-control" id="exampleInputText1" placeholder="Nama Jurusan" required oninvalid="this.setCustomValidity('Nama Jurusan Wajib Diisi')" 
+                      <input type="text" name="tad_name" class="form-control" id="exampleInputText1" placeholder="Nama Jurusan" required oninvalid="this.setCustomValidity('Nama Jurusan Wajib Diisi')" 
                       onchange="this.setCustomValidity('')">
                     </div>
                     @error('')
@@ -57,7 +57,7 @@
                   <div class="mb-4 row align-items-center">
                     <label for="exampleInputText1" class="form-label col-sm-3 col-form-label">Upload File Administrasi</label>
                     <div class="col-sm-9">
-                    <input type="file" name="file" class="form-control" accept=".xlsx,.csv" required>
+                    <input type="file" name="tad_file" class="form-control" accept=".xlsx,.csv" required>
                         <small class="text-muted">
                             Pastikan format sesuai template. <a class="text-primary">Unduh Template</a>
                         </small>

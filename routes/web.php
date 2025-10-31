@@ -4,7 +4,10 @@ use App\Http\Controllers\Administraion\AcademicYearController;
 use App\Http\Controllers\Administraion\ClassController;
 use App\Http\Controllers\Administraion\MajorController;
 use App\Http\Controllers\Administraion\StudentAdmissionController;
+use App\Http\Controllers\Administraion\TeacherAdmissionController;
+use App\Http\Controllers\Administraion\TeacherAdmistrationController;
 use App\Http\Controllers\ProfileController;
+use App\Models\TeacherAdministration;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -87,11 +90,19 @@ Route::prefix('administration')->name('administration.')->group(function () {
     });
     Route::prefix('student-admission-requirements')->name('student-admission-requirements.')->group(function () {
         Route::get('/', [StudentAdmissionController::class, 'index'])->name('student-admission-requirements');
-        Route::get('/create', [StudentAdmissionController::class, 'create'])->name('student-admission-requirements.classes.create');
-        Route::post('/create', [StudentAdmissionController::class, 'store'])->name('classes.store');
-        Route::get('/{id}/edit', [StudentAdmissionController::class, 'edit'])->name('classes.edit');
-        Route::post('/{id}/edit', [StudentAdmissionController::class, 'update'])->name('classes.update');
-        Route::delete('/{id}/destroy', [StudentAdmissionController::class, 'destroy'])->name('classes.destroy');
+        Route::get('/create', [StudentAdmissionController::class, 'create'])->name('student-admission-requirements.create');
+        Route::post('/create', [StudentAdmissionController::class, 'store'])->name('student-admission-requirements.store');
+        Route::get('/{id}/edit', [StudentAdmissionController::class, 'edit'])->name('student-admission-requirements.edit');
+        Route::post('/{id}/edit', [StudentAdmissionController::class, 'update'])->name('student-admission-requirements.update');
+        Route::delete('/{id}/destroy', [StudentAdmissionController::class, 'destroy'])->name('student-admission-requirements.destroy');
+    });
+    Route::prefix('teacher-administration')->name('teacher-administration.')->group(function () {
+        Route::get('/', [TeacherAdmistrationController::class, 'index'])->name('teacher-administration');
+        Route::get('/create', [TeacherAdmistrationController::class, 'create'])->name('teacher-administration.create');
+        Route::post('/create', [TeacherAdmistrationController::class, 'store'])->name('teacher-administration.store');
+        Route::get('/{id}/edit', [TeacherAdmistrationController::class, 'edit'])->name('teacher-administration.edit');
+        Route::post('/{id}/edit', [TeacherAdmistrationController::class, 'update'])->name('teacher-administration.update');
+        Route::delete('/{id}/destroy', [TeacherAdmistrationController::class, 'destroy'])->name('teacher-administration.destroy');
     });
 });
 
@@ -126,15 +137,15 @@ Route::get('/administration/teacher/{id}/employment status/edit', function () {
 });
 
 //Administrasi Guru
-Route::get('/administration/teacher-administration', function () {
-    return view('administration.teacher_administration.index');
-});
-Route::get('/administration/teacher-administration/create', function () {
-    return view('administration.teacher_administration.create');
-});
-Route::get('/administration/teacher-administration/{id}/edit', function () {
-    return view('administration.teacher_administration.edit');
-});
+// Route::get('/administration/teacher-administration', function () {
+//     return view('administration.teacher_administration.index');
+// });
+// Route::get('/administration/teacher-administration/create', function () {
+//     return view('administration.teacher_administration.create');
+// });
+// Route::get('/administration/teacher-administration/{id}/edit', function () {
+//     return view('administration.teacher_administration.edit');
+// });
 
 //Modul
 Route::get('/administration/module', function () {

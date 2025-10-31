@@ -61,10 +61,33 @@
                             <!-- end row -->
                         </thead>
                         <tbody>
-                            <!-- start row -->
+                          @foreach($teacher_administration as $no=> $file)
+                          <tr>
+                            <td>{{$no+1}}</td>
+                            <td>{{ $file->tad_name }}</td>
+                            {{-- <td><a href="{{ asset('storage/'.$file->tad_file) }}" target="_blank">Lihat File</a></td> --}}
+                            <td>
+                              @if($file->tad_file)
+                                @php
+                                    $filename = basename($file->tad_file);
+                                    $cleanName = preg_replace('/^\d+_/', '', $filename);
+                                @endphp
+                                <a href="{{ asset('storage/'.$file->tad_file) }}" target="_blank" class="text-black">
+                                  <i class="ti ti-file-spreadsheet"></i> {{ $cleanName }}
+                                </a>
+                              @else
+                                <span class="text-muted">Tidak ada file</span>
+                              @endif
+                            </td>
                             
-                            <!-- end row -->
-                            
+                            <td>
+                              <a href="/administration/teacher-administration/{{ $file->tad_id}}/edit" class="btn btn-primary">Edit</a>
+                              <a href="/administration/teacher-administration/{{ $file->tad_id}}/destroy" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+
+                         </td>
+                          </tr>
+                          @endforeach
+                          
                         </tbody>
                         <tfoot>
                             <!-- start row -->
